@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Website</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="banner">
+  <div class="navigation">
+    <img src="CS.png" class="logo">
+    <ul>
+
+<!--Tax Calculator-->  
+<div id="TaxCalculator">
+  <label id="label-income" for="income">Income</label>
+    <input id="income" name="income" type="number" placeholder="Enter amount here" />
+    <button id="evalbutton" onclick="computetax()">Compute Tax</button>
+
+
+    <h2 id="letter" style="color: aliceblue;" ></h2>
+    </div>
+  </body>
+  <script>
+    function computetax()
+{
+  var g,lg;
+
+  g = document.getElementById("income").value*1;  
+
+  console.log(g);
+  
+   if (g < 250000) {
+      lg = 0;
+   } else if (g >=250000 && g<=400000) {   
+      lg = (g - 250000) *.20;
+   } else if (g>=400000 && g<=800000) {
+      lg = (g -400000) *.25 + 30000;
+   } else if (g>=800000 && g<=2000000) {
+      lg = (g-800000)*.30 + 130000;
+   } else if (g>=2000000 && g<=8000000) {
+      lg = (g-2000000)*.32 +490000;
+   } else if (g>=8000000) {
+      lg = (g-8000000)*.35+2410000;
+    } else  {
+      lg = null;
+  
+   }      
+
+   document.getElementById("letter").innerHTML='Your Income Tax is: '+lg;    
+
+
+
+}
+  </script>

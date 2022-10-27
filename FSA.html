@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Website</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="banner">
+    <div class="navigation">
+      <img src="CS.png" class="logo">
+
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Factorial</title>
+      </head>
+    
+      <body>
+        <h1>Input a number:</h1>
+    
+        <input type="text" name="factorial" id="fact" />
+    
+        <br />
+    
+        <button onclick="factorial()">Calculate</button>
+    
+        <br />
+    
+        <p id="output1"></p>
+    
+        <br />
+    
+        <h1>Input a number:</h1>
+    
+        <input type="text" name="number" id="num" />
+    
+        <br />
+    
+        <button onclick="computation()">Compute</button>
+    
+        <br />
+    
+        <p id="output2"></p>
+    
+        <br />
+    
+        <h1>Input a number:</h1>
+    
+        <input type="text" name="average" id="ave" />
+    
+        <br />
+    
+        <button onclick="calculate()">Calculate</button>
+    
+        <br />
+    
+        <p id="output3"></p>
+    
+        <script>
+          function factorial() {
+            var fact, result, i;
+            fact = document.getElementById("fact").value;
+            result = 1;
+            i = 1;
+    
+            while (i <= fact) {
+              result = result * i;
+              i++;
+            }
+            i = i - 1;
+    
+            document.getElementById("output1").innerHTML =
+              "The factorial is: " + fact  + result;
+          }
+    
+          function calculate() {
+            var ave, result, i;
+            ave = document.getElementById("ave").value;
+            result = 0;
+            i = 1;
+    
+            for (let i = 1; i <= ave; i++) {
+              result = result + i;
+            }
+            result = result / ave;
+            document.getElementById("output3").innerHTML =
+              "The average of the first " + ave + " numbers is " + result;
+          }
+    
+          function computation() {
+            var num, i, result;
+            num = document.getElementById("num").value;
+            result = 0;
+    
+            i = 0;
+    
+            do {
+              result = result + i++;
+            } while (i <= num);
+    
+            document.getElementById("output2").innerHTML =
+              "The sum of the first " + num + " numbers is: " + result;
+          }
+        </script>
+      </body>
+    </html>
+    
